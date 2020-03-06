@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
+import { Container } from '@material-ui/core';
 
 class Bot extends Component {
     render() {
         return (
-            <p>Bot</p>
+            <Container maxWidth='sm'>
+                <p>Hello bot</p>
+            </Container>
         );
     }
 }

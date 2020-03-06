@@ -1,33 +1,20 @@
 import React from 'react';
-import MyNavbar from './components/MyNavbar'
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
-import Bot from "./components/Bot";
-import Settings from "./components/Settings";
+import {AppBar, Tabs, Tab, Typography} from '@material-ui/core';
+import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
+import Bot from './components/Bot';
+import Settings from './components/Settings';
+import MyNavbar from './components/MyNavbar';
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar bg="light" fixed="top">
-          <Navbar.Brand href="">Botmega</Navbar.Brand>
-          <Nav className="mr-auto">
-              <Nav.Link href="/">Bot</Nav.Link>
-              <Nav.Link href="/settings">Settings</Nav.Link>
-          </Nav>
-        </Navbar>
+        <MyNavbar />
         <Switch>
-          <Route path="/">
-            <Bot/>
-          </Route>
-          <Route path="/settings">
-            <Settings/>
-          </Route>
+          <Route path="/bot" component={Bot} />
+          <Route path="/settings" component={Settings} />
+          <Route component={Bot} />
         </Switch>
       </Router>
     </div>
